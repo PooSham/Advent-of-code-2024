@@ -1,5 +1,4 @@
 ﻿using System.Text.RegularExpressions;
-using Microsoft.VisualBasic.FileIO;
 
 StreamReader sr = new("./input.txt");
 
@@ -30,7 +29,8 @@ var inputSplitOnDont = wholeInput.Split("don't");
 var sum = Part1(inputSplitOnDont.First());
 
 // After each "don't", we have to find a "do"
-foreach(var inputPart in inputSplitOnDont.Skip(1)) {
+foreach (var inputPart in inputSplitOnDont.Skip(1))
+{
     var inputSplitOnDo = inputPart.Split("do");
     // After the "do", we're good to go.
     var inputPartToDo = string.Join("", inputSplitOnDo.Skip(1));

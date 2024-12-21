@@ -23,7 +23,6 @@ while (line != null)
                 break;
             }
         }
-
     }
 
     line = sr.ReadLine();
@@ -68,6 +67,4 @@ public static class MyExtensions
         }
         return newList.AsEnumerable();
     }
-
 }
-
