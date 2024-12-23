@@ -1,10 +1,4 @@
-﻿// See https://aka.ms/new-console-template for more information
-
-using System.Formats.Tar;
-using System.Linq;
-using System.Security.Cryptography.X509Certificates;
-
-StreamReader sr = new("../../../input.txt");
+﻿StreamReader sr = new("../../../input.txt");
 
 var input = sr.ReadToEnd();
 var splitInput = input.Split("\n\n");
