@@ -1,6 +1,6 @@
-﻿StreamReader sr = new("./input.txt");
+﻿var sr = new StreamReader("./input.txt");
 
-List<Antenna> antennas = [];
+var antennas = (List<Antenna>)[];
 
 var rows = sr.ReadToEnd().Split("\n");
 var noOfColumns = 0;
@@ -18,7 +18,7 @@ for (var row = 0; row < rows.Length; row++)
 }
 
 var antennasLookup = antennas.ToLookup(x => x.Name, x => x.Position);
-HashSet<Position> antiNodes = [];
+var antiNodes = (HashSet<Position>)[];
 
 foreach (var antennaForFrequency in antennasLookup)
 {
@@ -34,16 +34,16 @@ foreach (var antennaForFrequency in antennasLookup)
             var x2 = pos2.X;
             var y2 = pos2.Y;
 
-            Position diff = new(x1 - x2, y1 - y2);
+            var diff = new Position(x1 - x2, y1 - y2);
 
-            Position antinode1 = new(x1 + diff.X, y1 + diff.Y);
+            var antinode1 = new Position(x1 + diff.X, y1 + diff.Y);
 
             if (IsWithinLimits(antinode1))
             {
                 antiNodes.Add(antinode1);
             }
 
-            Position antinode2 = new(x2 - diff.X, y2 - diff.Y);
+            var antinode2 = new Position(x2 - diff.X, y2 - diff.Y);
 
             if (IsWithinLimits(antinode2))
             {
